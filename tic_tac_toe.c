@@ -25,7 +25,6 @@ char get_winner_number(GtkWidget *buttons[], char player_number[1]);
 _Bool get_is_game_has_steps(GtkWidget *buttons[], int positions_length)
 {
     _Bool is_game_has_steps = 0;
-
     for (GtkWidget **p_button = buttons; p_button < buttons + positions_length; p_button++)
     {
         const gchar *label = gtk_button_get_label(GTK_BUTTON(*p_button));
