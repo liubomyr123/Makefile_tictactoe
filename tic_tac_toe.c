@@ -108,6 +108,7 @@ int get_winner_number(GtkWidget *buttons[], char player_number[1])
     for (int i = 1; i <= POSITIONS_LENGTH; i++)
     {
         const gchar *label = gtk_button_get_label(GTK_BUTTON(*(buttons + i - 1)));
+        if (label == NULL) continue;
         if (strncmp(label, player_number, 1) == 0)
         {
             // X X X
@@ -250,7 +251,7 @@ int get_winner_number(GtkWidget *buttons[], char player_number[1])
         }
     }
 
-    int winner_number = player_number == PLAYER_1 ? 1 : 2;
+    int winner_number = strcmp(player_number, PLAYER_1) == 0 ? 1 : 2;
     return winner_combination != -1 ? winner_number : -1;
 }
 
@@ -260,6 +261,7 @@ _Bool get_is_game_has_steps(GtkWidget *buttons[])
     for (GtkWidget **p_button = buttons; p_button < buttons + POSITIONS_LENGTH; p_button++)
     {
         const gchar *label = gtk_button_get_label(GTK_BUTTON(*p_button));
+        if (label == NULL) continue;
         if (strncmp(label, PLAYER_1, 1) != 0 && strncmp(label, PLAYER_2, 1) != 0)
         {
             is_game_has_steps = 1;
