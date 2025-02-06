@@ -26,7 +26,7 @@ To build and run this project, you need to have the following installed:
 
 1. Clone the repository:
     ```bash
-    git clone [https://github.com/your-username/tic-tac-toe.git](https://github.com/liubomyr123/Makefile_tictactoe.git)
+    git clone https://github.com/liubomyr123/Makefile_tictactoe.git
     cd tic-tac-toe
     ```
 
